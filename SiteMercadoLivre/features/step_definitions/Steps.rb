@@ -1,20 +1,28 @@
-
-
-Dado("que eu acesse o site da YAMAN")do
-visit "http://yaman.com.br/"
+Dado("que eu acesse {string}") do |url|
+  PageMercadoLivre.new.load
+end
+  
+Quando("pesquisar o produto {string}") do |produto|
+  @pesquisa = PageMercadoLivre.new
+  @pesquisa.fazer_pesquisa(produto).native.send_keys(:enter)
 end
 
-Quando("clico no menu {string}") do |opcao|
-menu = find('li', :id => 'menu-item-2829')
-menu.click
+Entao("devem ser exibidos pelo menos {int} resultados") do |int|
+  prod = find('ol', :id => 'searchResults').text()
+  puts prod
 end
+  
+Quando("navegar até a segunda página de produtos") do
+  @pagina = PageMercadoLivre.new
+  @pagina.scroll()
+  @pagina.paginacao.click
 
-Quando("clico no submenu {string}") do |opcao|
-#submenu = find('li', :id => 'menu-item-2833')
-submenu = find('a', :text => opcao)
-submenu.click
+  #page.execute_script "window.scrollBy(0,12000)"
+  #PageMercadoLivre.new.paginacao.click
 end
-
-Entao("deve exibir a tela com o texto {string}") do |texto|
-page.assert_selector('h1', :class => 'h1-new-pages', :text => texto)
+  
+Entao("devo tirar um print do penultimo item da página") do
+  page.execute_script "window.scrollBy(0,12000)"
+  page.save_screenshot('MercadoLivre.png')
+  sleep 5
 end

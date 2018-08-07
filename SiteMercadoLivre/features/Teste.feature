@@ -1,21 +1,21 @@
+# encoding: utf-8
 # language: pt
-# encoding: UTF-8
 
-@Praticando
-Funcionalidade: Praticando Automação com RUBY
-   Eu como usuario quero acessar o site da Yaman
-   Para navegar por todo site e opções que o mesmo oferece
+Funcionalidade: Pesquisa no Mercado Livre
+    Eu como usuário
+    Quero acessar a página do Mercado Livre
+    Para pesquisar um produto e visualizar os preços
 
-    Contexto: Acessar o site
-    Dado que eu acesse o site da YAMAN
+@Pesquisa
+Cenario: Pesquisa por um produto
+    Dado que eu acesse "https://www.mercadolivre.com.br"
+    Quando pesquisar o produto "Galaxy S8"
+    Entao devem ser exibidos pelo menos 5 resultados
 
-    Cenario: Navegar em Soluções
-    Quando clico no menu "<menu>"
-    E clico no submenu "<submenu>"
-    Entao deve exibir a tela com o texto "<texto>"
-    Exemplos:
-    |menu       |submenu                        |texto                                                                      |
-    |Soluções   |Performance & Disponibilidade  |Suas aplicações precisam de mais velocidade e disponibilidade?             |
-    |Soluções   |Segurança de Aplicações        |Suas aplicações estão seguras?                                             |
-    |Soluções   |QA & Testes                    |Suas aplicações possuem muitos bugs? Precisa automatizar seus testes?      |
-    |Soluções   |Devops                         |Precisa entregar aplicações com mais agilidade, eficiência e qualidade?    |
+
+@PesquisaPrint
+Cenario: Pesquisa por um produto e screenshot do mesmo
+    Dado que eu acesse "https://www.mercadolivre.com.br"
+    Quando pesquisar o produto "Galaxy S8"
+    E navegar até a segunda página de produtos
+    Entao devo tirar um print do penultimo item da página
