@@ -3,7 +3,7 @@ class PageMercadoLivre < SitePrism::Page
     set_url "http://mercadolivre.com.br"
     
     element :campo_pesquisa, "input[name='as_word']"
-	element :paginacao, "li[class='pagination__page'], a[text='2']"
+	element :paginacao, "li[class='pagination__next']
 
     def fazer_pesquisa(produto)
         campo_pesquisa.set(produto)
