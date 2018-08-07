@@ -9,8 +9,8 @@ Funcionalidade: Pesquisa no Mercado Livre
 @Pesquisa
 Cenario: Pesquisa por um produto
     Dado que eu acesse "https://www.mercadolivre.com.br"
-    Quando pesquisar o produto "Galaxy S8"
-    Entao devem ser exibidos pelo menos 5 resultados
+    Quando pesquisar o produto "galaxy S8"
+    Entao deve exibir o resultado da pesquisa pelo produto "galaxy s8"
 
 
 @PesquisaPrint
