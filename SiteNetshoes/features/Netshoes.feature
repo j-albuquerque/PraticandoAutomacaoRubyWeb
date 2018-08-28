@@ -11,11 +11,11 @@ Funcionalidade: Praticando Automação com RUBY
 
 @Pesquisa
     Cenario: Pesquisar produto
-    Quando faço a busca pelo produto "Mochila"
-    Entao exibe a pagina de resultados
+    Quando realizo a busca pelo produto "Mochila"
+    Entao exibe a pagina de resultados com titulo "mochila"
 
-@PesquisaOrdenada
-    Cenario: Ordenar pesquisa por Lançamentos
-    Quando faço a busca pelo produto "Mochila"
-    E ordeno os resultados por "Lançamentos"
-    Entao exibe a pagina com resultado ordenado
+@SelecionarProduto
+    Cenario: Selecionar um produto do resultado da pesquisa
+    Quando realizo a busca pelo produto "mochila"
+    E clico no produto na posição 5 na pagina de resultados
+    Entao exibe a pagina com os detalhes do produto
