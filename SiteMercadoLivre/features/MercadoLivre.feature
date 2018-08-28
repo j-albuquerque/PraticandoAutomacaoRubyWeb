@@ -1,6 +1,7 @@
 # encoding: utf-8
 # language: pt
 
+@MercadoLivre
 Funcionalidade: Pesquisa no Mercado Livre
     Eu como usuário
     Quero acessar a página do Mercado Livre
@@ -25,5 +26,5 @@ Cenario: Realizar login no Mercado Livre
     Dado que eu acesse a pagina do Mercado Livre
     Quando preencho usuario com "usuario"
     E preencho senha com "senha"
-    Entao o login é realizado com sucesso
+    Entao o login é realizado com sucesso 
     
