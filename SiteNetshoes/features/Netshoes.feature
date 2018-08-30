@@ -19,3 +19,18 @@ Funcionalidade: Praticando Automação com RUBY
     Quando realizo a busca pelo produto "mochila"
     E clico no produto na posição 5 na pagina de resultados
     Entao exibe a pagina com os detalhes do produto
+
+@ProdutoNoCarrinho
+    Cenario: Colocar um produto no carrinho
+    Quando realizo a busca pelo produto "mochila"
+    E clico no produto na posição 5 na pagina de resultados
+    E clico no botao COMPRAR
+    Entao exibe o carrinho de compras
+
+@CalcularFrete
+    Cenario: Calculara o frete de um produto no carrinho
+    Quando realizo a busca pelo produto "mochila"
+    E clico no produto na posição 5 na pagina de resultados
+    E clico no botao COMPRAR
+    E calculo o frete para o endereco "07151320"
+    Entao é exibido o prazo de entrega do produto
