@@ -40,3 +40,9 @@ end
 Entao("é exibida a tela de edição") do
   @telaFormulario.validar_editarUsuarioTela()
 end
+
+
+Entao("o usuario é excluido com sucesso") do
+  native.send_keys(:enter)
+  sleep 200
+end
