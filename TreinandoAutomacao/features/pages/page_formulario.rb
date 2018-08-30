@@ -1,4 +1,4 @@
-class PageTreinandoAutomacao < SitePrism::Page
+class PageFormulario < SitePrism::Page
 
     ## Link da página que deve ser acessada
     set_url "https://automacaocombatista.herokuapp.com/treinamento/home "
@@ -53,6 +53,11 @@ class PageTreinandoAutomacao < SitePrism::Page
       when "ultimo nome"
         ampo_ultimoNome.set(dado)
       end
+    end
+
+    ## Visualizar dados de usuário já cadastrado
+    def visualizar_usuarioCadastrado
+      first('a', :class => 'material-icons', :text => 'search').click
     end
 
     ## Validar mensgem de usuário criado com sucesso
