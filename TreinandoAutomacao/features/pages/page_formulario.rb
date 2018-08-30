@@ -18,19 +18,19 @@ class PageFormulario < SitePrism::Page
     element :botao_voltar, "a[class='btn waves-light red']"
     element :botao_editar, "a[class='btn waves-light blue']"
 
-    # Clicar no link Formulário
-    def clicar_formulario
-      page.find('a', :class=> 'collapsible-header', :text=> 'Formulário').click
-    end
-
-    ## Clicar no link Criar Usuário
-    def clicar_criarUsuario
-      page.find('a', :text=> 'Criar Usuários').click
-    end
-
-    ## Clicar na opcao Lista de usuários
-    def clicar_listaUsuarios
-      page.find('a', :text=> 'Lista de Usuários').click
+    ## Selecionar opção
+    def selecionarOpcao(opcao)
+      case opcao
+      when "Formulário"
+        # Clicar no link Formulário
+        page.find('a', :class=> 'collapsible-header', :text=> opcao).click
+      when "Criar Usuários"
+        ## Clicar no link Criar Usuário
+        page.find('a', :text=> 'Criar Usuários').click
+      when "Lista de Usuários"
+        ## Clicar na opcao Lista de usuários
+        page.find('a', :text=> 'Lista de Usuários').click
+      end
     end
 
     ## Preencher todos os campos do formulário
@@ -51,16 +51,33 @@ class PageFormulario < SitePrism::Page
       when "nome"
         campo_nome.set(dado)
       when "ultimo nome"
-        ampo_ultimoNome.set(dado)
+        campo_ultimoNome.set(dado)
+      when "e-mail"
+        campo_email.set(dado)
+      when "universidade"
+        campo_universidade.set(dado)
+      when "profissão"
+        campo_profissao.set(dado)
+      when "genero"
+        campo_genero.set(dado)
+      when "idade"
+        campo_idade.set(dado)
       end
     end
 
     ## Visualizar dados de usuário já cadastrado
-    def visualizar_usuarioCadastrado
-      first('a', :class => 'material-icons', :text => 'search').click
+    def botoes_listaUsuarios(botao)
+      case botao
+      when "visualizar"
+        first('a', :class => 'material-icons', :text => 'search').click
+      when "editar"
+        first('a', :class => 'material-icons', :text => 'edit').click
+      when "excluir"
+        first('a', :class => 'material-icons', :text => 'delete').click
+      end
     end
 
-    ## Validar mensgem de usuário criado com sucesso
+    ## Validar mensagem de usuário criado com sucesso
     def validar_usuarioCriadoComSucesso
       page.assert_selector('p', :id => 'notice', :text => 'Usuário Criado com sucesso')
     end
@@ -86,5 +103,6 @@ class PageFormulario < SitePrism::Page
     def validar_editarUsuarioTela
       page.assert_selector('h5', :class => 'center', :text => 'Editar Usuário!!')
     end
+
 
 end
