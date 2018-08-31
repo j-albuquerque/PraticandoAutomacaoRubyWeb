@@ -35,6 +35,20 @@ class PageFormulario < SitePrism::Page
       end
     end
 
+    ##Consumir massa
+    def consumirMassa
+      posicao = rand(0..3)
+      @nome = $dados_usuario[posicao]['nome']
+      @ultimoNome = $dados_usuario[posicao]['ultimoNome']
+      @email = $dados_usuario[posicao]['email']
+      @endereco = $dados_usuario[posicao]['endereco']
+      @universidade = $dados_usuario[posicao]['universidade']
+      @profissao = $dados_usuario[posicao]['profissao']
+      @genero = $dados_usuario[posicao]['genero']
+      @idade = $dados_usuario[posicao]['idade']
+      preencherFormulariro(@nome, @ultimoNome, @email, @endereco, @universidade, @profissao, @genero, @idade)
+    end
+
     ## Preencher todos os campos do formulário
     def preencherFormulariro(nome, ultimoNome, email, endereco, universidade, profissao, genero, idade)
       campo_nome.set(nome)
