@@ -11,11 +11,20 @@ Contexto: Acessar a página automacaocombatista
   E clico na opcao "Formulário"
 
 @criarUsuario
-  Cenario: Preencher um formulário completo para cadastro de usuario
+  Esquema do Cenario: Preencher um formulário completo para cadastro de usuario
     Quando clico na opcao "Criar Usuários"
-    E preencho todos os campos do formulario
+    E preencho todos os campos "<nome>" "<ultimoNome>" "<email>" "<endereco>" "<universidade>" "<profissao>" "<genero>" "<idade>" do formulario
     E clico no botao "CRIAR"
     Entao o cadastro é realizado com sucesso
+    Exemplos:
+    |nome     |ultimoNome   |email                  |endereco             |universidade       |profissao                |genero     |idade|
+    |Ruby     |Automacao    |rubyteste.rb@email.com |Rua dos Testes, 222  |Univesidade Teste  |Automatizador de testes  |masculino  |28   |
+    |Ruby     |Tester       |tester.rb@email.com    |Rua dos Testes, 444  |Univesidade Teste  |Automatizador de testes  |feminino   |30   |
+    |Ruby     |Executor     |executor.rb@email.com  |Rua dos Testes, 666  |Univesidade Teste  |Automatizador de testes  |masculino  |32   |
+    |Ruby     |Analista     |analista.rb@email.com  |Rua dos Testes, 888  |Univesidade Teste  |Automatizador de testes  |feminino   |34   |
+    |Ruby     |Treinamento  |teste.rb@email.com     |Rua dos Testes, 555  |Univesidade Teste  |Automatizador de testes  |masculino  |36   |
+    |Ruby     |Autoteste    |autoteste.rb@email.com |Rua dos Testes, 777  |Univesidade Teste  |Automatizador de testes  |feminino   |38   |
+    |Ruby     |Praticando   |automacao.rb@email.com |Rua dos Testes, 333  |Univesidade Teste  |Automatizador de testes  |masculino  |40   |
 
 @voltarNovoUsuario
   Cenario: Clicar em voltar na tela novo usuario
@@ -26,15 +35,15 @@ Contexto: Acessar a página automacaocombatista
 @editarUsuarioRecemCriado
   Esquema do Cenario: Editar o usuário que acabou de ser criado
     Quando clico na opcao "Criar Usuários"
-    E preencho todos os campos do formulario
+    E preencho todos os campos "<nome>" "<ultimoNome>" "<email>" "<endereco>" "<universidade>" "<profissao>" "<genero>" "<idade>" do formulario
     E clico no botao 'CRIAR'
     E clico no botao "EDITAR"
     E altero o campo "<campo>" para "<dado>"
     E clico no botao "CRIAR"
     Entao a edicao é realizada com sucesso
     Exemplos:
-    |campo  |dado   |
-    |nome   |Aline  |
+    |nome     |ultimoNome   |email                  |endereco             |universidade       |profissao                |genero     |idade|campo  |dado   |
+    |Ruby     |Automacao    |rubyteste.rb@email.com |Rua dos Testes, 222  |Univesidade Teste  |Automatizador de testes  |masculino  |28   |nome   |Aline  |
 
 @voltarEdicao
   Cenario: Clicar em voltar na tela de edição de usuário

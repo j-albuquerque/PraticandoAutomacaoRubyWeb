@@ -36,15 +36,15 @@ class PageFormulario < SitePrism::Page
     end
 
     ## Preencher todos os campos do formulário
-    def preencherFormulariro
-      campo_nome.set("Ruby")
-      campo_ultimoNome.set("Automacao")
-      campo_email.set("automacao.rb@teste.com")
-      campo_endereco.set("R dos Teste, 456")
-      campo_universidade.set("Univesidade Teste")
-      campo_profissao.set("Automatizador de testes")
-      campo_genero.set("masculino")
-      campo_idade.set("32")
+    def preencherFormulariro(nome, ultimoNome, email, endereco, universidade, profissao, genero, idade)
+      campo_nome.set(nome)
+      campo_ultimoNome.set(ultimoNome)
+      campo_email.set(email)
+      campo_endereco.set(endereco)
+      campo_universidade.set(universidade)
+      campo_profissao.set(profissao)
+      campo_genero.set(genero)
+      campo_idade.set(idade)
     end
 
     ## Editar formulario

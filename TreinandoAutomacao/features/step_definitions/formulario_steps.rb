@@ -7,10 +7,11 @@ Dado("clico na opcao {string}") do |opcao|
   @telaFormulario.selecionarOpcao(opcao)
 end
 
-Quando("preencho todos os campos do formulario") do
+Quando("preencho todos os campos {string} {string} {string} {string} {string} {string} {string} {string} do formulario") do |nome, ultimoNome, email, endereco, universidade, profissao, genero, idade|
   @telaFormulario.validar_novoUsuarioTela()
-  @telaFormulario.preencherFormulariro()
+  @telaFormulario.preencherFormulariro(nome, ultimoNome, email, endereco, universidade, profissao, genero, idade)
 end
+
 
 Quando("clico no botao {string}") do |botao|
   @telaFormulario.botoes_clicar(botao)
