@@ -27,20 +27,20 @@ Contexto: Acessar a página automacaocombatista
   Esquema do Cenario: Editar o usuário que acabou de ser criado
     Quando clico na opcao "Criar Usuários"
     E preencho todos os campos do formulario
-    E clico no botao 'CRIAR'
+    E clico no botao "CRIAR"
     E clico no botao "EDITAR"
     E altero o campo "<campo>" para "<dado>"
     E clico no botao "CRIAR"
     Entao a edicao é realizada com sucesso
     Exemplos:
-    |campo  |dado   |
-    |nome   |Aline  |
+    |campo   |dado   |
+    |idade   |52     |
 
 @voltarEdicao
   Cenario: Clicar em voltar na tela de edição de usuário
     Quando clico na opcao "Criar Usuários"
     E preencho todos os campos do formulario
-    E clico no botao 'CRIAR'
+    E clico no botao "CRIAR"
     E clico no botao "EDITAR"
     E clico no botao "VOLTAR"
     Entao exibe a tela Lista de usuários
@@ -61,6 +61,14 @@ Contexto: Acessar a página automacaocombatista
     Quando clico na opcao "Lista de Usuários"
     E clico no botao "editar"
     Entao é exibida a tela de edição
+
+@voltarEdicaoLista
+  Cenario: Clicar em voltar na tela de edição de usuário partir da Lista de Usuários
+    Quando clico na opcao "Lista de Usuários"
+    E clico no botao "editar"
+    E é exibida a tela de edição
+    E clico no botao "VOLTAR"
+    Entao a HOME é exibida
 
 @excluirUsuarioLista
   Cenario: Excluir um usuário da lista de Usuários

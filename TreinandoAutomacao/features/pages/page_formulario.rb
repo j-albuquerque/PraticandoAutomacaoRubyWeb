@@ -1,7 +1,7 @@
 class PageFormulario < SitePrism::Page
 
     ## Link da página que deve ser acessada
-    set_url "https://automacaocombatista.herokuapp.com/treinamento/home "
+    #set_url "https://automacaocombatista.herokuapp.com/treinamento/home"
 
     ## Mapeamento dos campos do formulário
     element :campo_nome, "input[id='user_name']"
@@ -15,7 +15,7 @@ class PageFormulario < SitePrism::Page
 
     ##Consumir massa
     def consumirMassa
-      posicao = rand(0..3)
+      posicao = rand(0..5)
       @nome = $dados_usuario[posicao]['nome']
       @ultimoNome = $dados_usuario[posicao]['ultimoNome']
       @email = $dados_usuario[posicao]['email']
@@ -58,6 +58,5 @@ class PageFormulario < SitePrism::Page
         campo_idade.set(dado)
       end
     end
-
 
 end

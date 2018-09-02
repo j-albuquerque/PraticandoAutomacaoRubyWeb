@@ -1,7 +1,7 @@
 class PageGeral < SitePrism::Page
 
       ## Link da página que deve ser acessada
-      set_url "https://automacaocombatista.herokuapp.com/treinamento/home "
+      set_url "https://automacaocombatista.herokuapp.com/treinamento/home"
 
       ## Mapeamento de Botões
       element :botao_criar, "input[name='commit']"
@@ -19,9 +19,11 @@ class PageGeral < SitePrism::Page
         when "Criar Usuários"
           ## Clicar no link Criar Usuário
           page.find('a', :text=> 'Criar Usuários').click
+          page.assert_selector('h5', :class => 'center', :text => 'Novo Usuário!!')
         when "Lista de Usuários"
           ## Clicar na opcao Lista de usuários
           page.find('a', :text=> 'Lista de Usuários').click
+          page.assert_selector('h5', :class => 'center', :text => 'Lista de Usuários!!')
         when "Busca de elementos"
           # Clicar no link Busca de elementos
           page.find('a', :class=> 'bold.active', :text=> opcao).click

@@ -9,6 +9,7 @@ end
 
 Quando("preencho todos os campos do formulario") do
   @telaFormulario = PageFormulario.new
+  @telaGeral.validar_novoUsuarioTela()
   @telaFormulario.consumirMassa()
 end
 

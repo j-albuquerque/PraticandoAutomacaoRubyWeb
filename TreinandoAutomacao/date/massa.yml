@@ -1,7 +1,7 @@
 -
   nome: "Ruby"
   ultimoNome: "Automacao"
-  email: "rubyteste.rb@email.com "
+  email: "rubyteste.rb@email.com"
   endereco: "Rua dos Testes, 222"
   universidade: "Univesidade Teste "
   profissao: "Automatizador de testes"
