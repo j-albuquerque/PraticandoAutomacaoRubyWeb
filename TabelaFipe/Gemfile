@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+#git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+
+# gem "rails"
+
+gem 'rspec'
+gem 'cucumber'
+gem 'capybara'
+gem 'capybara-screenshot', :group => :test
+gem 'selenium-webdriver'
+gem 'capybara/cucumber'
+gem 'pry'
+gem 'site_prism'
